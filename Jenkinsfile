@@ -9,7 +9,7 @@ pipeline {
         }
 	stage('Compile and build') {
             steps {
-                sh 'home/swapnil/Documents/DevOps-Software/apache-maven-3.9.8/bin/mvn install'
+                sh 'mvn install'
             }
         }
 	stage('Deployment'){
