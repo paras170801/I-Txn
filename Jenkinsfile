@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent{
+	label 'uat-label'
+	}
 	triggers {
   		pollSCM '* * * * *'
 	}	
@@ -17,9 +19,5 @@ pipeline {
                 sh 'mvn install'
             }
         }
-	stage('Deployment'){
-		   steps {
-		sh 'cp target/MESHO.war /home/swapnil/Documents/DevOps-Software/apache-tomcat-11.0.6/webapps'
-			}}
     }
 }
