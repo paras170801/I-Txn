@@ -52,7 +52,7 @@ pipeline {
         } 
         stage("Deploy using Docker container"){
             steps{
-                sh "docker run -d --name=loginwebseven1 -p 8083:8080 swapnilhub/loginwebappseven:latest"
+                sh "docker run -d --name=loginwebseven190 -p 8084:8080 swapnilhub/loginwebappseven:latest"
             }
         }       
 }
