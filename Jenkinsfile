@@ -38,7 +38,7 @@ pipeline {
        stage("Docker Build and Image Push"){
             steps{
                 script{
-                    withDockerRegistry(credentialsId: 'Docker-Hub', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                        sh "docker build -t swapnilhub/loginwebappseven ."
                        sh "docker push swapnilhub/loginwebappseven:latest"
                     }
@@ -56,15 +56,4 @@ pipeline {
             }
         }       
 }
-post {
-     always {
-        emailext attachLog: true,
-            subject: "'${currentBuild.result}'",
-            body: "Project: ${env.JOB_NAME}<br/>" +
-                "Build Number: ${env.BUILD_NUMBER}<br/>" +
-                "URL: ${env.BUILD_URL}<br/>",
-            to: 'devops.catchup@gmail.com',  
-            attachmentsPattern: 'trivyimage.txt'
-        }
-    }
 }
