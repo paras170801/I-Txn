@@ -6,10 +6,12 @@ import com.example.payment.service.PaymentService;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.UUID;
 
 public class PaymentController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         String payer = request.getParameter("payer");
         double amount = Double.parseDouble(request.getParameter("amount"));
         String method = request.getParameter("method");
@@ -18,12 +20,15 @@ public class PaymentController extends HttpServlet {
         payment.setPayer(payer);
         payment.setAmount(amount);
         payment.setPaymentMethod(method);
+        payment.setCurrency("USD");
+        payment.setTransactionId(UUID.randomUUID().toString());
 
         PaymentService service = new PaymentService();
-        boolean result = service.processPayment(payment);
+        boolean success = service.processPayment(payment);
 
-        request.setAttribute("result", result ? "Payment Successful" : "Payment Failed");
-        request.getRequestDispatcher("jsp/result.jsp").forward(request, response);
+        payment.setStatus(success ? "SUCCESS" : "FAILED");
+
+        request.setAttribute("result", "Transaction " + payment.getTransactionId() + ": " + payment.getStatus());
+        request.getRequestDispatcher("jsp/index.jsp").forward(request, response);
     }
 }
-
