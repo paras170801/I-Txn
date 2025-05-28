@@ -18,7 +18,7 @@
     <section class="hero">
         <h2>Welcome to AVM Travel Agency</h2>
         <p>Book your travel and make secure payments with ease.</p>
-        <a class="btn" href="payment.jsp">Proceed to Payment</a>
+        <a class="btn" href="payment.html">Proceed to Payment</a>
     </section>
 </body>
 </html>
