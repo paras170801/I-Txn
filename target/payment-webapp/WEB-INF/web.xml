@@ -1,0 +1,12 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         version="4.0">
+    <servlet>
+        <servlet-name>PaymentController</servlet-name>
+        <servlet-class>com.example.payment.controller.PaymentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentController</servlet-name>
+        <url-pattern>/pay</url-pattern>
+    </servlet-mapping>
+</web-app>
+
