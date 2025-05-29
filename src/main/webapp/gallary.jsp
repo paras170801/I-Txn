@@ -39,7 +39,7 @@
                 <div class="caption">Luxury AC Bus Fleet</div>
             </div>
             <div class="gallery-item">
-                <img src="images/bus2.jpg" alt="Luxury Bus 2">
+                <img src="images/bus2.jpg"alt="Luxury Bus 2">
                 <div class="caption">Spacious Seating & Wi-Fi Enabled</div>
             </div>
 
