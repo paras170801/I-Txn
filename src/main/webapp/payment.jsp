@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block content %}
+<!-- Instead of {% block content %} -->
+<!-- Put full HTML structure or use jsp:include -->
 <h1>Payment Page</h1>
 
 <style>
