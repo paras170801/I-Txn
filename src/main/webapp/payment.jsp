@@ -178,19 +178,19 @@ button.pay-btn:hover {
   <div class="payment-methods">
     <div class="payment-method">
       <input type="radio" id="phonepay" name="payment" value="PhonePe" required>
-      <label for="phonepay">📱 PhonePe</label>
+      <label for="phonepay">PhonePe</label>
     </div>
     <div class="payment-method">
       <input type="radio" id="googlepay" name="payment" value="Google Pay" required>
-      <label for="googlepay">🤖 Google Pay</label>
+      <label for="googlepay">Google Pay</label>
     </div>
     <div class="payment-method">
       <input type="radio" id="upi" name="payment" value="UPI" required>
-      <label for="upi">🔗 UPI</label>
+      <label for="upi">UPI</label>
     </div>
     <div class="payment-method">
       <input type="radio" id="creditcard" name="payment" value="Credit Card" required>
-      <label for="creditcard">💳 Credit Card</label>
+      <label for="creditcard">Credit Card</label>
     </div>
   </div>
 
@@ -242,5 +242,3 @@ function processPayment(event) {
   return false; // prevent form submission for demo
 }
 </script>
-
-{% endblock %}
