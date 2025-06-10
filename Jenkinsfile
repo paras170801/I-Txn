@@ -8,7 +8,7 @@ pipeline {
      stages{
         stage("Git Checkout"){
             steps{
-                git branch: 'master', changelog: false, poll: false, url: 'https://github.com/devops-catchup/payment-webapp.git'
+                git branch: 'master', changelog: false, poll: false, url: 'https://github.com/devops-catchup/I-Txn.git'
             }
         }
         stage("Compile"){
