@@ -39,20 +39,20 @@ pipeline {
             steps{
                 script{
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                       sh "docker build -t swapnilhub/loginwebappseven ."
-                       sh "docker push swapnilhub/loginwebappseven:latest"
+                       sh "docker build -t parashub/loginwebappseven ."
+                       sh "docker push parashub/loginwebappseven:latest"
                     }
                 }
             }     
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image swapnilhub/loginwebappseven:latest > trivyimage.txt"
+                sh "trivy image parashub/loginwebappseven:latest > trivyimage.txt"
             }
         } 
         stage("Deploy using Docker container"){
             steps{
-                sh "docker run -d --name=loginwebseven190 -p 8084:8080 swapnilhub/loginwebappseven:latest"
+                sh "docker run -d --name=loginwebseven190 -p 8084:8080 parashub/loginwebappseven:latest"
             }
         }       
 }
