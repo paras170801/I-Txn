@@ -52,8 +52,7 @@ pipeline {
         } 
         stage("Deploy using Docker container"){
             steps{
-                sh "docker run -d --name=loginwebseven200 -p 8084:8080 parashub/loginwebappseven:latest sleep 10000
-"
+                sh "docker run -d --name=loginwebseven200 -p 8084:8080 parashub/loginwebappseven:latest sleep 10000"
             }
         }       
 }
